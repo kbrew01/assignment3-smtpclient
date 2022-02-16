@@ -1,4 +1,5 @@
 from socket import *
+import ssl
 
 
 def smtp_client(port=1025, mailserver='127.0.0.1'):
@@ -20,6 +21,12 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     #print(recv) #You can use these print statement to validate return codes from the server.
     #if recv[:3] != '220':
     #    print('220 reply not received from server.')
+    
+    # startTlsCommand = 'STARTTLS\r\n'
+    # clientSocket.send(startTlsCommand.encode())
+    # tls_recv = clientSocket.recv(1024)
+    # print(tls_recv)
+    # ssl_clientSocket = ssl.wrap_socket(clientSocket, ssl_version=ssl.PROTOCOL_SSLv23)
 
     # Send HELO command and print server response.
     heloCommand = 'HELO Alice\r\n'
