@@ -21,7 +21,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     #print(recv) #You can use these print statement to validate return codes from the server.
     #if recv[:3] != '220':
     #    print('220 reply not received from server.')
-    
+
     # startTlsCommand = 'STARTTLS\r\n'
     # clientSocket.send(startTlsCommand.encode())
     # tls_recv = clientSocket.recv(1024)
@@ -60,7 +60,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # Fill in start
     dataCommand = 'DATA\r\n\n'
     clientSocket.send(dataCommand.encode())
-    recccv4 = clientSocket.recv(1024).decode()
+    recv4 = clientSocket.recv(1024).decode()
     # print(recv4)
     # if recv4[:3] != '354':
     #   print('354 reply not received from server.')
@@ -84,10 +84,10 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # Fill in start
     quitCommand = 'QUIT\r\n'
     clientSocket.send(quitCommand.encode())
-    recv6 = clientSocket.recv(024).decode()
+    recv6 = clientSocket.recv(1024).decode()
     # print(recv6)
-    # if recv6[:3] != '250':
-    #   print('250 reply not received from server.')
+    # if recv6[:3] != '221':
+    #   print('221 reply not received from server.')
     # Fill in end
 
 
